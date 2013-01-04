@@ -47,7 +47,8 @@ if (window.MozWebSocket) {
 function openConnection() {
   // uses global 'conn' object
   if (conn.readyState === undefined || conn.readyState > 1) {
-    conn = new WebSocket('ws://localhost:2001/wschat/handshake/');
+    var wsUri = "ws://" + window.document.location.host + "/wschat/handshake/";
+    conn = new WebSocket(wsUri);
     conn.onopen = function () {
       state.className = 'success';
       state.innerHTML = 'Socket open';
