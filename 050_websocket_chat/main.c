@@ -5,20 +5,30 @@
 
 DUDA_REGISTER("Duda I/O Examples", "WebSocket Chat");
 
+int channel;
+
 void cb_on_message(duda_request_t *dr, ws_request_t *wr)
 {
-    websocket->broadcast(wr, wr->payload, wr->payload_len, WS_OPCODE_TEXT);
+    websocket->broadcast(wr, wr->payload, wr->payload_len,
+                         WS_OPCODE_TEXT, channel);
 }
 
 void cb_handshake(duda_request_t *dr)
 {
-    websocket->handshake(dr);
+    websocket->handshake(dr, channel);
 }
 
 int duda_main()
 {
     /* Load the websocket package */
     duda_load_package(websocket, "websocket");
+
+
+    /*
+     * We will have only one websocket channel identified by
+     * number zero
+     */
+    channel = 0;
 
     /*
      * Define a callback, on every websocket message received,
