@@ -1,0 +1,13 @@
+Example: 002_query_string
+-------------------------
+The goal of this example is to show how the query string part
+of an URL can be accessed and used.
+
+The service wants to know what are the values of 'fruit' and
+'drink', so you can try something like this:
+
+  http://localhost:2001/query_string?fruit=apple&drink=tequila
+
+The Query String object API (qs) is documented here:
+
+  http://duda.io/api/qs.html

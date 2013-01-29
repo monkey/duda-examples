@@ -2,9 +2,9 @@ CC      = gcc -g -Wall -DDEBUG
 INCDIR  = ../../src -I../../../../src/include/ -I../../
 OBJECTS = main.o
 
-all: hello.duda
+all: query_string.duda
 
-hello.duda: $(OBJECTS)
+query_string.duda: $(OBJECTS)
 	$(CC) $(CFLAGS) $(LDFLAGS) $(DEFS) -shared -o $@ $^ -lc
 
 .c.o:
