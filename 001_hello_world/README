@@ -1,4 +1,14 @@
-In order to run this web server you must use the following
-URL address:
+Duda I/O Examples: 001 Hello World
+==================================
+This is the most basic web service that you can have in Duda I/O, in
+order to access it you may the following address:
 
     http://localhost:2001/hello/
+
+For more details about the service please refer to the docummented
+source code.
+
+
+Author
+======
+Eduardo Silva P. <edsiper@gmail.com>
