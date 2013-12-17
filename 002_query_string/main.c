@@ -43,9 +43,23 @@ void cb_query_string(duda_request_t *dr)
     }
     else {
         response->printf(dr, "Cool, you did it right :)\n\n");
-        response->printf(dr, "Fruit='%s' and Drink='%s'", fruit, drink);
+
+        /* Variable name based lookup */
+        response->printf(dr,
+                         "Lookup based on variable name\n"
+                         "------------------------------\n");
+        response->printf(dr, "  fruit: '%s'\n", fruit);
+        response->printf(dr, "  drink: '%s'\n\n", drink);
+
+        /* Now lets do the same variable lookup but based on their position */
+        response->printf(dr,
+                         "Lookup based on position\n"
+                         "------------------------\n");
+        response->printf(dr, "  ID 0: '%s'\n", qs->get_id(dr, 0));
+        response->printf(dr, "  ID 1: '%s'\n", qs->get_id(dr, 1));
     }
 
+    /* Finalize */
     response->end(dr, NULL);
 }
 
