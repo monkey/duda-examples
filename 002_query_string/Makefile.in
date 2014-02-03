@@ -1,14 +1,8 @@
-CC      = gcc -g -Wall -DDEBUG
-INCDIR  = ../../src -I../../../../src/include/ -I../../
+NAME    = query_string
+CC      = gcc
+CFLAGS  = -g -Wall -DDEBUG
+INCDIR  =
+LDFLAGS =
+DEFS    =
 OBJECTS = main.o
 
-all: query_string.duda
-
-query_string.duda: $(OBJECTS)
-	$(CC) $(CFLAGS) $(LDFLAGS) $(DEFS) -shared -o $@ $^ -lc
-
-.c.o:
-	$(CC) $(CFLAGS) $(LDFLAGS) $(DEFS) -I$(INCDIR) -fPIC -c $<
-
-clean:
-	rm -rf *.o *~ *.*duda*
