@@ -1,0 +1,12 @@
+Duda I/O Examples: 002 Post 01
+==================================
+Simple web service to validate and retrieve a POST request
+
+    http://localhost:2001/post/
+
+For more details about the service please refer to the docummented
+source code.
+
+Author
+======
+Eduardo Silva P. <eduardo@monkey.io>
