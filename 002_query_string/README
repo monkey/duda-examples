@@ -1,5 +1,6 @@
 Duda I/O Examples: 002 Query String
 ===================================
+
 On this example we will show how to work with the query string
 part of an incoming HTTP request, how it can be accessed and used.
 

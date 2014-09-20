@@ -37,7 +37,7 @@ int duda_main()
     websocket->set_callback(WS_ON_MESSAGE, cb_on_message);
 
     /* Associate a static URL with a callback */
-    map->static_add("/handshake/", "cb_handshake");
+    router->map("/handshake/", cb_handshake);
 
     /* Initialize the broadcaster interface */
     websocket->broadcaster();

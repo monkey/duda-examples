@@ -1,3 +1,6 @@
+Duda I/O Examples: 002 Query String
+===================================
+
 In order to run this web server you must use the following
 URL address:
 
@@ -7,4 +10,6 @@ If your web service is running in a different port than 2001, make
 sure to edit the file html/index.html and replace the TCP port with
 the proper value.
 
-
+Author
+======
+Eduardo Silva <eduardo@monkey.io>
