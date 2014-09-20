@@ -1,7 +1,0 @@
-NAME    = hello
-CC      = gcc
-CFLAGS  = -g -Wall -DDEBUG
-LDFLAGS =
-DEFS    =
-INCDIR  =
-OBJECTS = main.o
