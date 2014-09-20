@@ -1,0 +1,19 @@
+Duda I/O Examples: 080 Dthread Fibonacci
+========================================
+On this example we will show how to use the dthread (duda thread)
+provided by duda to write synchronous-like code and communication
+between different dthreads with channel.
+
+There is a productor dthread which constructs the first twenty
+numbers of the fibonacci sequence, and a consumer dthread that
+picks up every generated number from the productor dthread and
+sends back to the user. In order to access it you may type the
+following address:
+
+  http://localhost:2001/dthread_fibonacci/
+
+For more details about the service please refer to the source code.
+
+Author
+======
+Zeying Xie <swpdtz@gmail.com>
