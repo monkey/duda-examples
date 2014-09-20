@@ -1,5 +1,12 @@
-In order to run this web server you must use the following
-URL address:
+Duda I/O Examples: 003 Data
+===========================
 
-    http://localhost:2001/data
+This example aims to map and return absolute paths for the location
+of the data directory, the service can be accessed through the
+following address:
 
+  http://localhost:2001/data/
+
+Author
+======
+Eduardo Silva <eduardo@monkey.io>

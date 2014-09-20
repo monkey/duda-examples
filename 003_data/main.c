@@ -33,7 +33,7 @@ void cb_data_example(duda_request_t *dr)
 
 int duda_main()
 {
-    map->static_add("/", "cb_data_example");
+    router->root(cb_data_example);
 
     return 0;
 }
