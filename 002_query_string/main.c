@@ -65,7 +65,6 @@ void cb_query_string(duda_request_t *dr)
 
 int duda_main()
 {
-    map->static_add("/", "cb_query_string");
-
+    router->root(cb_query_string);
     return 0;
 }
