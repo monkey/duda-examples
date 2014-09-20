@@ -10,27 +10,20 @@
 
 DUDA_REGISTER("Duda I/O Examples", "Post");
 
-/*
- * This is our callback defined in duda_main(). All callbacks for HTTP
- * requests receives the 'duda request' context (aka dr) which must
- * be used to compose the response or any other kind of work.
- *
- * The callback functions do not return any value, everything must be
- * done through the Duda API directly.
- */
-void cb_main(duda_request_t *dr)
+/* Our root callback for the service */
+void cb_root(duda_request_t *dr)
 {
     char *data;
     unsigned long len;
 
     /*
-     * We only want a POST request 
+     * We only want a POST request
      * ---------------------------
      * For the example context, we only want to deal with POST
      * request types.
      *
      * On this example we are using the method is_post(), but
-     * you can also use is_data() which also verify for POST 
+     * you can also use is_data() which also verify for POST
      * and PUT.
      */
     if (request->is_post(dr) == MK_FALSE) {
@@ -74,23 +67,6 @@ void cb_main(duda_request_t *dr)
  */
 int duda_main()
 {
-    /*
-     * Registering a callback
-     * ----------------------
-     * The Map object expose methods to register callback functions
-     * that matches some HTTP URI pattern.
-     *
-     * Note: When registering multiple callbacks they will be processed
-     * in the given order, so the first match will be processed. The
-     * first parameter defines the pattern and is compared like "if it
-     * starts with...". No wildcards are supported at the moment.
-     */
-    map->static_add("/", "cb_main");
-
-    /*
-     * Return value
-     * -------------
-     * Returning zero means that this service is ready to run.
-     */
+    router->root(cb_root);
     return 0;
 }
