@@ -20,7 +20,7 @@ DUDA_REGISTER("Duda I/O Examples", "Hello World");
  * The callback functions do not return any value, everything must be
  * done through the Duda API directly.
  */
-void cb_hello(duda_request_t *dr)
+void cb_foo(duda_request_t *dr)
 {
     /*
      * Setting HTTP status
@@ -39,7 +39,7 @@ void cb_hello(duda_request_t *dr)
      * is part of the Response object to instruct the stack to
      * send out a text which contains the 'Hello World!' message.
      */
-    response->printf(dr, "Hello World!");
+    response->printf(dr, "Hello World from foo!");
 
 
     /*
@@ -55,6 +55,24 @@ void cb_hello(duda_request_t *dr)
     response->end(dr, NULL);
 }
 
+/*
+ * This second callback is also defined inside duda_main(), we just
+ * print out a different message in the response.
+ */
+void cb_bar(duda_request_t *dr)
+{
+    response->http_status(dr, 200);
+    response->printf(dr, "Hello World from bar!");
+    response->end(dr, NULL);
+}
+
+/* The root callback, only triggered when requesting the root URI */
+void cb_root(duda_request_t *dr)
+{
+    response->http_status(dr, 200);
+    response->printf(dr, "Welcome to my world! I'm the root callback!");
+    response->end(dr, NULL);
+}
 
 /*
  * This is the principal function loaded by Duda stack to initialize
@@ -64,17 +82,24 @@ void cb_hello(duda_request_t *dr)
 int duda_main()
 {
     /*
-     * Registering a callback
-     * ----------------------
-     * The Map object expose methods to register callback functions
+     * Registering some callbacks
+     * --------------------------
+     * The Router object expose methods to register callback functions
      * that matches some HTTP URI pattern.
      *
      * Note: When registering multiple callbacks they will be processed
      * in the given order, so the first match will be processed. The
      * first parameter defines the pattern and is compared like "if it
-     * starts with...". No wildcards are supported at the moment.
+     * starts with...".
      */
-    map->static_add("/", "cb_hello");
+    router->map("/foo/", cb_foo);
+    router->map("/bar/", cb_bar);
+
+    /*
+     * We also can define an unique callback that will be triggered
+     * once a HTTP request requires the root address of the service
+     */
+    router->root(cb_root);
 
     /*
      * Return value

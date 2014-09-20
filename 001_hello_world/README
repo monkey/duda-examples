@@ -1,14 +1,14 @@
 Duda I/O Examples: 001 Hello World
 ==================================
 This is the most basic web service that you can have in Duda I/O, in
-order to access it you may the following address:
+order to access it you may the following URLS:
 
-    http://localhost:2001/hello/
+  1. http://localhost:2001/hello/
+  2. http://localhost:2001/hello/foo
 
-For more details about the service please refer to the docummented
+For more details about the service please refer to the documented
 source code.
-
 
 Author
 ======
-Eduardo Silva P. <edsiper@gmail.com>
+Eduardo Silva P. <eduardo@monkey.io>
