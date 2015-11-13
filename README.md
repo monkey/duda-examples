@@ -1,5 +1,9 @@
 # Duda IO Examples / DST-2
 
+## READ !
+
+This master branch is for testing purposes of the development version of Duda, make sure to checkout the __dst-1__ branch!
+
 The following code are different examples of [Duda I/O](http://duda.io) stack API usage. It covers specific of each API example and objects available on version __DST-2__.
 
 ## Documentation
