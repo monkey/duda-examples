@@ -11,7 +11,7 @@ The service in question wants to know what are the values of 'fruit' and
 
 The Query String object API (qs object) is documented here:
 
-  http://duda.io/documentation/api/dst-1/qs.html
+  http://duda.io/documentation/api/qs.html
 
 Author
 ======
